@@ -56,7 +56,7 @@ const Navbar = () => {
                 className="text-2xl font-bold text-blue-600 cursor-pointer"
                 onClick={() => handleLinkClick('Home', 'home')}
               >
-                🛍️ ShopNow
+                🛍️ CheapShop
               </h1>
             </div>
           </div>

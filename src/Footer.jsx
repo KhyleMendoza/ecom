@@ -67,12 +67,7 @@ const Footer = () => {
     alert(`Clicked: ${linkName}`);
   };
 
-  const handleNewsletterSubmit = (e) => {
-    e.preventDefault();
-    const email = e.target.email.value;
-    alert(`Newsletter subscription for: ${email}`);
-    e.target.reset();
-  };
+
 
   const [email, setEmail] = React.useState('');
 
@@ -122,10 +117,10 @@ const Footer = () => {
             {/* Company Info */}
             <div className="lg:col-span-2">
               <div className="mb-6">
-                <h2 className="text-2xl font-bold text-blue-400 mb-4">Your Store</h2>
+                <h2 className="text-2xl font-bold text-blue-400 mb-4">CheapShop</h2>
                 <p className="text-gray-300 mb-4">
-                  We provide high-quality products with excellent customer service. 
-                  Your satisfaction is our top priority.
+                  We provide quality products at unbeatable prices with excellent customer service. 
+                  Your satisfaction and savings are our top priorities.
                 </p>
                 <div className="space-y-2 text-gray-300">
                   <p className="flex items-center">
@@ -138,7 +133,7 @@ const Footer = () => {
                   </p>
                   <p className="flex items-center">
                     <span className="mr-2">✉️</span>
-                    info@yourstore.com
+                    info@cheapshop.com
                   </p>
                 </div>
               </div>
@@ -220,7 +215,7 @@ const Footer = () => {
             {/* Copyright */}
             <div className="text-center md:text-right">
               <p className="text-gray-300 text-sm">
-                © {currentYear} Shopnow. All rights reserved.
+                © {currentYear} CheapShop. All rights reserved.
               </p>
             </div>
           </div>
