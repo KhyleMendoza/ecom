@@ -220,10 +220,7 @@ const Footer = () => {
             {/* Copyright */}
             <div className="text-center md:text-right">
               <p className="text-gray-300 text-sm">
-                © {currentYear} Your Store. All rights reserved.
-              </p>
-              <p className="text-gray-400 text-xs mt-1">
-                Made with ❤️ for our customers
+                © {currentYear} Shopnow. All rights reserved.
               </p>
             </div>
           </div>

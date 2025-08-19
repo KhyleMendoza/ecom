@@ -3,18 +3,23 @@ import React, { useState } from 'react';
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [cartCount, setCartCount] = useState(3);
+  const [activeLinkName, setActiveLinkName] = useState('Home');
 
   const navigationLinks = [
-    { name: 'Home', href: '#', active: true },
-    { name: 'Products', href: '#', active: false },
-    { name: 'Categories', href: '#', active: false },
-    { name: 'Deals', href: '#', active: false },
-    { name: 'About', href: '#', active: false },
-    { name: 'Contact', href: '#', active: false }
+    { name: 'Home', targetId: 'home' },
+    { name: 'Products', targetId: 'products' },
+    { name: 'Categories', targetId: 'categories' },
+    { name: 'Deals', targetId: 'deals' },
+    { name: 'About', targetId: 'about' },
+    { name: 'Contact', targetId: 'contact' }
   ];
 
-  const handleLinkClick = (linkName) => {
-    alert(`Clicked: ${linkName}`);
+  const handleLinkClick = (linkName, targetId) => {
+    const section = document.getElementById(targetId);
+    if (section) {
+      section.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      setActiveLinkName(linkName);
+    }
     setIsMenuOpen(false);
   };
 
@@ -24,8 +29,13 @@ const Navbar = () => {
 
   const handleSearchSubmit = () => {
     const searchInput = document.getElementById('search-input');
-    if (searchInput.value.trim()) {
+    if (searchInput && searchInput.value.trim()) {
       alert(`Searching for: ${searchInput.value}`);
+      const productsSection = document.getElementById('products');
+      if (productsSection) {
+        productsSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        setActiveLinkName('Products');
+      }
       searchInput.value = '';
     }
   };
@@ -42,7 +52,10 @@ const Navbar = () => {
           {/* Logo */}
           <div className="flex items-center">
             <div className="flex-shrink-0">
-              <h1 className="text-2xl font-bold text-blue-600 cursor-pointer">
+              <h1
+                className="text-2xl font-bold text-blue-600 cursor-pointer"
+                onClick={() => handleLinkClick('Home', 'home')}
+              >
                 🛍️ ShopNow
               </h1>
             </div>
@@ -54,9 +67,9 @@ const Navbar = () => {
               {navigationLinks.map((link) => (
                 <button
                   key={link.name}
-                  onClick={() => handleLinkClick(link.name)}
+                  onClick={() => handleLinkClick(link.name, link.targetId)}
                   className={`px-3 py-2 rounded-md text-sm font-medium transition-colors duration-200 ${
-                    link.active
+                    activeLinkName === link.name
                       ? 'bg-blue-100 text-blue-700'
                       : 'text-gray-600 hover:text-blue-600 hover:bg-gray-100'
                   }`}
@@ -205,9 +218,9 @@ const Navbar = () => {
             {navigationLinks.map((link) => (
               <button
                 key={link.name}
-                onClick={() => handleLinkClick(link.name)}
+                onClick={() => handleLinkClick(link.name, link.targetId)}
                 className={`w-full text-left px-3 py-2 rounded-md text-base font-medium transition-colors duration-200 ${
-                  link.active
+                  activeLinkName === link.name
                     ? 'bg-blue-100 text-blue-700'
                     : 'text-gray-600 hover:text-blue-600 hover:bg-white'
                 }`}
