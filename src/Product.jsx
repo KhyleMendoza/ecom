@@ -34,15 +34,34 @@ const Product = () => {
     },
     {
       id: 4,
-      name: "Laptop Stand",
-      price: 39.99,
-      originalPrice: 59.99,
-      image: "https://images.unsplaash.com/photo-1527864550417-7fd91fc51a46?w=400&h=400&fit=crop",
-      rating: 4.3,
-      reviews: 89,
-      description: "Ergonomic aluminum stand with adjustable height."
+      name: "Bluetooth Speaker",
+      price: 79.99,
+      originalPrice: 99.99,
+      image: "https://images.unsplash.com/photo-1608043152269-423dbba4e7e1?w=400&h=400&fit=crop",
+      rating: 4.6,
+      reviews: 203,
+      description: "Portable speaker with rich sound and long battery life."
+    },
+    {
+      id: 5,
+      name: "Phone Case",
+      price: 24.99,
+      originalPrice: 34.99,
+      image: "https://images.unsplash.com/photo-1556656793-08538906a9f8?w=400&h=400&fit=crop",
+      rating: 4.4,
+      reviews: 156,
+      description: "Durable protection with sleek design for your phone."
+    },
+    {
+      id: 6,
+      name: "Power Bank",
+      price: 32.99,
+      originalPrice: 49.99,
+      image: "https://images.unsplash.com/photo-1609091839311-d5365f9ff1c5?w=400&h=400&fit=crop",
+      rating: 4.2,
+      reviews: 94,
+      description: "Fast charging cable with braided design."
     }
-
   ]);
 
   const [cart, setCart] = useState([]);
