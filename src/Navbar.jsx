@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const [cartCount, setCartCount] = useState(3);
+  const [cartCount] = useState(3);
   const [activeLinkName, setActiveLinkName] = useState('Home');
 
   const navigationLinks = [

@@ -59,7 +59,7 @@ const Banner = () => {
   };
 
   return (
-    <div className="relative w-full h-96 md:h-[500px] overflow-hidden rounded-lg shadow-2xl">
+    <div className="relative w-full h-96 md:h-[500px] overflow-hidden rounded-none shadow-2xl">
       {/* Background Images */}
       <div className="relative w-full h-full">
         {bannerData.map((banner, index) => (

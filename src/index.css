@@ -1,0 +1,9 @@
+html {
+  scroll-behavior: smooth;
+}
+
+/* Ensure body background matches sections */
+body {
+  background-color: #f3f4f6; /* tailwind gray-100 */
+}
+
